@@ -16,20 +16,6 @@ exports.arraysAnswers = {
 
   remove: function (arr, item) {
     //splice()
-    /*let index = arr.indexOf(item);
-    if (index > -1) {
-      arr.splice(index, 1);
-    }*/
-
-    /*var i = 0;
-      while (i < arr.length) {
-        if (arr[i] === item) {
-          arr.splice(i, 1);
-        } else {
-          ++i;
-        }
-      }*/
-
     for (let i = 0; i < arr.length; ) {
       if (arr[i] === item) {
         arr.splice(i, 1);
@@ -42,33 +28,63 @@ exports.arraysAnswers = {
 
   removeWithoutCopy: function (arr, item) {
     //splice()??
-    for (let i = 0; i < arr.length; ) {
+    let i = 0;
+    while (i < arr.length) {
       if (arr[i] === item) {
         arr.splice(i, 1);
       } else {
-        i++;
+        ++i;
       }
     }
     return arr;
   },
 
-  append: function (arr, item) {},
+  append: function (arr, item) {
+    arr.push(item);
+    return arr;
+  },
 
-  truncate: function (arr) {},
+  truncate: function (arr) {
+    arr.pop();
+    return arr;
+  },
 
-  prepend: function (arr, item) {},
+  prepend: function (arr, item) {
+    arr.unshift(item);
+    return arr;
+  },
 
-  curtail: function (arr) {},
+  curtail: function (arr) {
+    arr.shift();
+    return arr;
+  },
 
-  concat: function (arr1, arr2) {},
+  concat: function (arr1, arr2) {
+    arr3 = arr1.concat(arr2);
+    return arr3;
+  },
 
-  insert: function (arr, item, index) {},
+  insert: function (arr, item, index) {
+    arr.splice(index, 0, item);
+    return arr;
+  },
 
-  count: function (arr, item) {},
+  count: function (arr, item) {
+    const result = arr.filter((num) => num === item);
+    return result.length;
+  },
 
-  duplicates: function (arr) {},
+  duplicates: function (arr) {
+    const result = arr.filter((item, index) => arr.indexOf(item) !== index);
+    const uniqueResult = [...new Set(result)];
+    return uniqueResult;
+  },
 
-  square: function (arr) {},
+  square: function (arr) {
+    return arr.map(function (arr) {
+      return Math.pow(arr[i], 2);
+    });
+  },
 
   findAllOccurrences: function (arr, target) {},
 };
