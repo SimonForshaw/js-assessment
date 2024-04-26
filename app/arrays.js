@@ -81,8 +81,8 @@ exports.arraysAnswers = {
   },
 
   square: function (arr) {
-    return arr.map(function (arr) {
-      return Math.pow(arr[i], 2);
+    return arr.map(function (x) {
+      return Math.pow(x, 2);
     });
   },
 
