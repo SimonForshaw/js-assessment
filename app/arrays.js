@@ -86,5 +86,12 @@ exports.arraysAnswers = {
     });
   },
 
-  findAllOccurrences: function (arr, target) {},
+  findAllOccurrences: function (arr, target) {
+    let indexes = [],
+      i = -1;
+    while ((i = arr.indexOf(target, i + 1)) != -1) {
+      indexes.push(i);
+    }
+    return indexes;
+  },
 };
